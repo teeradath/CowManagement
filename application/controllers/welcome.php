@@ -1,17 +1,18 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+﻿<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
 
 	public function index()
 	{
 		//$this->load->view('welcome_message');
-		$this->load->model("user_model");
-		$data["arr"] = "testt";
-		
-		$this->template->content_view = "home/home";
+		//$this->load->model("user_model");
+		$data["xxx"] = "active";
+		$this->template->menuActive = 0;
+		$this->template->title = "ระบบการจัดการโคนม";
+		$this->template->content_view = "welcome/home";
 		$this->template->get_template($data);
 		
-		
+
 	}
 	public function users($id,$limit){
 		$this->load->model("user_model");

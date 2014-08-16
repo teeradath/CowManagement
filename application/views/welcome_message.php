@@ -65,7 +65,9 @@
 	</style>
 </head>
 <body>
-
+<?php echo form_open_multipart("upload_image/upload_file");?>
+<input type="file" name="image_file" size="20" > 
+<input type="submit" name="btnSave" class="formbutton" value="Save">
 <div id="container">
 	<h1>Welcome to CodeIgniter!</h1>
 
@@ -84,5 +86,7 @@
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
 </div>
 
+
+<?php echo form_close();?>
 </body>
 </html>

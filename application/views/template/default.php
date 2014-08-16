@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Modern Business - Start Bootstrap Template</title>
+    <title><?php echo $title;?></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url();?>css/bootstrap.min.css" rel="stylesheet">
@@ -41,18 +41,36 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<?php echo base_url();?>">CI MIM</a>
+                <a class="navbar-brand" href="<?php echo base_url();?>">ระบบการจัดการโคนม</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active">
-                        <a href="<?php echo base_url();?>">Home</a>
+                    <li class="<? echo $menuActive==0?"active":""; ?>">
+                        <a href="<?php echo base_url();?>">หน้าหลัก</a>
                     </li>
-                    <li>
+                    <li class="<? echo $menuActive==1?"active":""; ?>">
+                        <a href="<?php echo base_url();?>cow">ข้อมูลโคนม</a>
+                    </li>
+                    <li class="<? echo $menuActive==2?"active":""; ?>">
+                        <a href="<?php echo base_url();?>welcome/users/1/5">ประวัตการผสมเทียม</a>
+                    </li>
+                    <li class="<? echo $menuActive==3?"active":""; ?>">
+                        <a href="<?php echo base_url();?>welcome/users/1/5">ประวัตการฉีดยา</a>
+                    </li>
+                    <li class="<? echo $menuActive==4?"active":""; ?>">
+                        <a href="<?php echo base_url();?>welcome/users/1/5">ประวัตการให้นม</a>
+                    </li>
+                    <li class="<? echo $menuActive==5?"active":""; ?>">
+                        <a href="<?php echo base_url();?>welcome/users/1/5">ประวัตการให้อาหาร</a>
+                    </li>
+                    <li class="<? echo $menuActive==6?"active":""; ?>">
+                        <a href="<?php echo base_url();?>welcome/users/1/5">คุณภาพน้ำนม</a>
+                    </li>
+                    <!--<li>
                         <a href="<?php echo base_url();?>welcome/users/1/5">Services</a>
                     </li>
-                    <li>
+                     <li>
                         <a href="contact.html">Contact</a>
                     </li>
                     <li class="dropdown">
@@ -108,7 +126,7 @@
                                 <a href="pricing.html">Pricing Table</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
@@ -116,6 +134,7 @@
     </nav>
 
     <!-- Header Carousel -->
+    <?php if($this->router->fetch_class()=="welcome" && $this->router->fetch_method() == "index"):?>
     <header id="myCarousel" class="carousel slide">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -154,60 +173,25 @@
             <span class="icon-next"></span>
         </a>
     </header>
-
+	<?php endif;?>
     <!-- Page Content -->
     <div class="container">
+    <?php if($this->router->fetch_class()=="welcome" && $this->router->fetch_method() == "index"):?>
 <!-- Page Heading/Breadcrumbs -->
         <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Sidebar Page
-                    <small>Subheading</small>
+            <div class="col-md-12">
+                <h1 class="page-header">ยินดีต้อนรับ
+                    <small>ระบบการจัดการโคนม</small>
                 </h1>
-                <ol class="breadcrumb">
-                    <li><a href="index.html">Home</a>
-                    </li>
-                    <li class="active">Sidebar Page</li>
-                </ol>
+                
             </div>
         </div>
         <!-- /.row -->
-
+	<?php endif;?>
         <!-- Content Row -->
         <div class="row">
-            <!-- Sidebar Column -->
-            <div class="col-md-3">
-                <div class="list-group">
-					<div class="list-group-item">
-					<label>เข้าสู่ระบบ</label>
-						<input type="text" class="form-control" placeholder="Username">
-						<input type="text" class="form-control" placeholder="Password" style="margin-top:5px">
-						<button type="button" class="btn btn-primary" style="margin-top:5px;width:100%">Login</button>
-						<div style="text-align:right;margin-top:5px;"class="form-control-static">
-						<a href="index.html" style="margin-top:2px">ลืมรหัสผ่าน</a> | <a href="index.html" style="margin-top:2px">สมัครสมาชิค</a>
-						</div>
-					</div>
-                    <a href="index.html" class="list-group-item">Home</a>
-                    <a href="about.html" class="list-group-item">About</a>
-                    <a href="services.html" class="list-group-item">Services</a>
-                    <a href="contact.html" class="list-group-item">Contact</a>
-                    <a href="portfolio-1-col.html" class="list-group-item">1 Column Portfolio</a>
-                    <a href="portfolio-2-col.html" class="list-group-item">2 Column Portfolio</a>
-                    <a href="portfolio-3-col.html" class="list-group-item">3 Column Portfolio</a>
-                    <a href="portfolio-4-col.html" class="list-group-item">4 Column Portfolio</a>
-                    <a href="portfolio-item.html" class="list-group-item">Single Portfolio Item</a>
-                    <a href="blog-home-1.html" class="list-group-item">Blog Home 1</a>
-                    <a href="blog-home-2.html" class="list-group-item">Blog Home 2</a>
-                    <a href="blog-post.html" class="list-group-item">Blog Post</a>
-                    <a href="full-width.html" class="list-group-item">Full Width Page</a>
-                    <a href="sidebar.html" class="list-group-item active">Sidebar Page</a>
-                    <a href="faq.html" class="list-group-item">FAQ</a>
-                    <a href="404.html" class="list-group-item">404</a>
-                    <a href="pricing.html" class="list-group-item">Pricing Table</a>
-                </div>
-				
-            </div>
             <!-- Content Column -->
-            <div class="col-md-9">
+            <div class="col-md-12">
                 <?php 
 					if(isset($content_text)){echo $content_text;} if(isset($content_view) && !isset($content_data)){ $this->load->view($content_view); } 
 					if(isset($content_view) && isset($content_data)){ foreach($content_data as $key => $value){ $data[$key] = $value; } $this->load->view($content_view,$data); }
