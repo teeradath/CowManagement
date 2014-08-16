@@ -1,4 +1,4 @@
 RewriteEngine On
-RewriteBase /CI_mlm/
+RewriteBase /cow/
 RewriteCond $1 !^(index\.php|css|js|images|fonts)
 RewriteRule ^(.*)$ index.php [L]
